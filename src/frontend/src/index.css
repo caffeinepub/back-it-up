@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* Dark electric palette — deep slate + electric lime */
+    --background: 0.09 0.012 255;
+    --foreground: 0.95 0.008 100;
+
+    --card: 0.12 0.014 255;
+    --card-foreground: 0.95 0.008 100;
+
+    --popover: 0.14 0.014 255;
+    --popover-foreground: 0.95 0.008 100;
+
+    /* Electric lime/chartreuse primary */
+    --primary: 0.88 0.26 130;
+    --primary-foreground: 0.09 0.012 255;
+
+    --secondary: 0.16 0.012 255;
+    --secondary-foreground: 0.82 0.01 100;
+
+    --muted: 0.16 0.012 255;
+    --muted-foreground: 0.55 0.018 255;
+
+    /* Electric violet accent */
+    --accent: 0.55 0.22 275;
+    --accent-foreground: 0.95 0.008 100;
+
+    /* Success = bright lime */
+    --success: 0.82 0.24 142;
+
+    /* Destructive = vivid orange-red */
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.21 0.016 255;
+    --input: 0.21 0.016 255;
+    --ring: 0.88 0.26 130;
+
+    --chart-1: 0.88 0.26 130;
+    --chart-2: 0.55 0.22 275;
+    --chart-3: 0.72 0.18 200;
+    --chart-4: 0.62 0.22 25;
+    --chart-5: 0.72 0.18 60;
+
+    --sidebar: 0.12 0.014 255;
+    --sidebar-foreground: 0.95 0.008 100;
+    --sidebar-primary: 0.88 0.26 130;
+    --sidebar-primary-foreground: 0.09 0.012 255;
+    --sidebar-accent: 0.55 0.22 275;
+    --sidebar-accent-foreground: 0.95 0.008 100;
+    --sidebar-border: 0.21 0.016 255;
+    --sidebar-ring: 0.88 0.26 130;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-success {
+    color: oklch(var(--success));
+  }
+  .bg-success {
+    background-color: oklch(var(--success));
+  }
+  .bg-success\/10 {
+    background-color: oklch(var(--success) / 0.1);
+  }
+  .border-success\/20 {
+    border-color: oklch(var(--success) / 0.2);
+  }
+  .border-success\/30 {
+    border-color: oklch(var(--success) / 0.3);
+  }
+  .font-display {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+  .wordmark {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-optical-sizing: auto;
+  }
+  .card-glow {
+    box-shadow: 0 0 0 1px oklch(var(--border)), 0 4px 24px
+      oklch(var(--primary) / 0.06);
+  }
+  .card-glow-active {
+    box-shadow: 0 0 0 1px oklch(var(--primary) / 0.4), 0 4px 24px
+      oklch(var(--primary) / 0.12);
+  }
+}
